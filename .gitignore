@@ -1,0 +1,16 @@
+/test
+/bin
+/gen
+/inst
+/obj
+/obj_wix
+/lib
+*.ncb
+*.user
+*.suo
+__pycache__
+download.error
+/src/SolutionItems
+/web/src/db.sqlite
+*.aps
+.vs
