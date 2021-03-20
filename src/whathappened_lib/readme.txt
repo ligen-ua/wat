@@ -33,4 +33,4 @@ See:
 
 Run:
 
-     whathappened <report file> <log file> <yyyy/mm/dd hh:mm:ss:SSS>;
+     whathappened /report <report file> <log file> <yyyy/mm/dd hh:mm:ss:SSS>;
