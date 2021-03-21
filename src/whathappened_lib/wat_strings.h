@@ -1,5 +1,6 @@
 #pragma once
 #include "wat_base.h"
+#include <cstring>
 
 namespace wat
 {

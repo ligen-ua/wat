@@ -55,7 +55,12 @@ void time_to_string(const ptime & timeval, std::string * pstring)
 {
     std::time_t time = std::chrono::system_clock::to_time_t(timeval.get());
     tm tm = { 0 };
+
+#ifdef _WIN    
     localtime_s(&tm, &time);
+#else
+    localtime_r(&time, &tm);
+#endif
 
     std::chrono::system_clock::time_point time_without_ms= std::chrono::system_clock::from_time_t(time);
     int milliseconds = (int)std::chrono::duration_cast<std::chrono::milliseconds>(timeval.get() - time_without_ms).count();
@@ -95,7 +100,7 @@ time_duration operator - (const ptime & time1, const ptime & time2)
 }
 ptime get_local_time()
 {
-    return std::chrono::floor<std::chrono::milliseconds>(std::chrono::system_clock::now());
+    return ptime(std::chrono::floor<std::chrono::milliseconds>(std::chrono::system_clock::now()));
 }
 
 #endif

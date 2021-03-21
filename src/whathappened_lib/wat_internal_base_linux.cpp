@@ -6,7 +6,7 @@ namespace wat
 
 thread_id_type get_current_thread_id()
 {
-    return gettid(void);
+    return gettid();
 }
 
 }
